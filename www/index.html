@@ -20,7 +20,7 @@
 
       <section class="listRecords">
         <ul>
-          <li ng-repeat="r in records">
+          <li ng-repeat="r in listRecords()">
             <span class="desc">[{{r.date}}] {{r.description}}</span>
             <span class="amount">{{r.amount|currency:"HUF ":0}}
           </li>
