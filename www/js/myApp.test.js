@@ -23,7 +23,7 @@ describe("myApp", function() {
       $scope: scope
     });
 
-    expect(scope.addRecord).to.exist;
+    expect(scope).to.have.property('addRecord');
     expect(scope.addRecord).to.be.a('function');
   }));
 
@@ -36,12 +36,12 @@ describe("myApp", function() {
     });
 
     expect(scope.records).to.be.instanceof(Array);
-    expect(scope.records.length).to.equal(0);
+    expect(scope.records).to.have.lengthOf(0);
 
     scope.newRecord = newRecord;
 
     expect(scope.addRecord()).to.not.throw;
 
-    expect(scope.records.length).to.equal(1);
+    expect(scope.records).to.have.lengthOf(1);
   }));
 });
