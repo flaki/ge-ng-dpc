@@ -7,6 +7,7 @@
     "copy-libs": "mkdir www/lib && cp node_modules/angular/angular.min.js www/lib/",
     "gulp-copy-libs": "node_modules/.bin/gulp copy-libs",
     "serve": "node_modules/.bin/http-server -p 8080 www",
+    "apiserver": "node node_modules/dpc-angular-server/server.js ./www",
     "test": "karma start",
     "postinstall": "npm run gulp-copy-libs"
   },
