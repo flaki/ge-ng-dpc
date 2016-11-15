@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{myAppTitle}}</title>
+</head>
+<body>
+    <header>
+      <h1>PokéBudget</h1>
+    </header>
+
+    <main ng-controller="myController">
+      <form class="addRecordForm">
+        <input type="number" ng-model="newRecord.amount" />
+        <input type="text" ng-model="newRecord.description" />
+        <input type="date" ng-model="newRecord.date" />
+        <button ng-click="addRecord()">Add</button>
+      </form>
+
+      <section class="listRecords">
+        <ul>
+          <li ng-repeat="r in records">
+            <span class="desc">[{{r.date}}] {{r.description}}</span>
+            <span class="amount">{{r.amount|currency:"HUF ":0}}
+          </li>
+        </ul>
+      </section>
+    </main>
+
+  <script src="lib/angular.min.js"></script>
+  <script src="js/myApp.js"></script>
+</body>
+</html>
