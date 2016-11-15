@@ -1,8 +1,47 @@
 var expect = chai.expect;
 
-describe('Testing myApp', function() {
+describe("Testing", function() {
+  it("is running properly", function() {});
+});
 
-  describe('Testing myController', function() {
-    
-  })
-})
+describe("myApp", function() {
+  beforeEach(function() {
+    module("myApp");
+  });
+
+  it("has myController", inject( function($controller) {
+    var c = $controller('myController', {
+      $scope: {}
+    });
+
+    expect(c).to.exist;
+  }));
+
+  it("myController has an addRecord method", inject( function($controller) {
+    var scope = {};
+    var c = $controller('myController', {
+      $scope: scope
+    });
+
+    expect(scope.addRecord).to.exist;
+    expect(scope.addRecord).to.be.a('function');
+  }));
+
+  it("myController's addRecord() works properly", inject( function($controller) {
+    var newRecord = {};
+
+    var scope = {};
+    var c = $controller('myController', {
+      $scope: scope
+    });
+
+    expect(scope.records).to.be.instanceof(Array);
+    expect(scope.records.length).to.equal(0);
+
+    scope.newRecord = newRecord;
+
+    expect(scope.addRecord()).to.not.throw;
+
+    expect(scope.records.length).to.equal(1);
+  }));
+});
