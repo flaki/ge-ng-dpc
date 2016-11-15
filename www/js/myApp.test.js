@@ -35,13 +35,16 @@ describe("myApp", function() {
       $scope: scope
     });
 
-    expect(scope.records).to.be.instanceof(Array);
-    expect(scope.records).to.have.lengthOf(0);
+    var records = scope.listRecords();
+
+    expect(records).to.be.instanceof(Array);
+    expect(records).to.have.lengthOf(0);
 
     scope.newRecord = newRecord;
 
     expect(scope.addRecord()).to.not.throw;
 
-    expect(scope.records).to.have.lengthOf(1);
+    records = scope.listRecords();
+    expect(records).to.have.lengthOf(1);
   }));
 });
