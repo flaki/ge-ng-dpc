@@ -10,13 +10,13 @@ function storageServiceServer($http) {
   });
 
   function addRecord(newRecord) {
-    $http.put('/api/items', newRecord).then(function(result) {
+    $http.post('/api/items', newRecord).then(function(result) {
       if (result.status !== 200) {
         console.log('HTTP ERROR ', result.status);
         return;
       }
 
-      storage.unshift(newRecord);
+      storage.unshift(result.data);
     });
   }
 
