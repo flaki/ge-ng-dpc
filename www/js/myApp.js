@@ -3,7 +3,8 @@ var myApp = angular.module('myApp', ['ngRoute']);
 myApp.config(function($routeProvider) {
   $routeProvider
     .when('/all', {
-      template: '<h2>All records</h2>'
+      templateUrl: 'templates/allPage.tmpl.html',
+      controller: 'allPageController'
     })
     .otherwise({
       templateUrl: 'templates/startPage.tmpl.html',
