@@ -1,6 +1,6 @@
 var myApp = angular.module('myApp', ['ngRoute']);
 
-myApp.config(function($routeProvider) {
+myApp.config(function($routeProvider, $locationProvider) {
   $routeProvider
     .when('/all', {
       templateUrl: 'templates/allPage.tmpl.html',
@@ -10,4 +10,10 @@ myApp.config(function($routeProvider) {
       templateUrl: 'templates/startPage.tmpl.html',
       controller: 'startPageController'
     });
+
+  $locationProvider.html5Mode({
+    enabled: true,
+    requireBase: false,
+    rewriteLinks: true
+  });
 });

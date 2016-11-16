@@ -2,6 +2,7 @@ angular.module('myApp')
   .controller("startPageController", startPageController);
 
 function startPageController($scope, storageService) {
+  console.log('startPageController');
   $scope.newRecord = {};
 
   $scope.addRecord = addRecord;
