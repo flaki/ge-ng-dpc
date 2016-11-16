@@ -1,17 +1,12 @@
-var myApp = angular.module('myApp', []);
+var myApp = angular.module('myApp', ['ngRoute']);
 
-myApp.controller("myController", myController);
-
-
-function myController($scope, storageService) {
-  $scope.newRecord = {};
-
-  $scope.addRecord = addRecord;
-
-  $scope.listRecords = storageService.listRecords.bind(storageService);
-
-  function addRecord() {
-    storageService.addRecord($scope.newRecord);
-    $scope.newRecord = {};
-  }
-}
+myApp.config(function($routeProvider) {
+  $routeProvider
+    .when('/all', {
+      template: '<h2>All records</h2>'
+    })
+    .otherwise({
+      templateUrl: 'templates/startPage.tmpl.html',
+      controller: 'startPageController'
+    });
+});

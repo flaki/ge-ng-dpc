@@ -6,24 +6,16 @@
     <title>{{myAppTitle}}</title>
 </head>
 <body>
-    <header>
-      <h1>PokéBudget</h1>
-    </header>
+  <header>
+    <h1>PokéBudget</h1>
+  </header>
 
-    <main ng-controller="myController">
-      <form class="addRecordForm">
-        <input type="number" ng-model="newRecord.amount" />
-        <input type="text" ng-model="newRecord.description" />
-        <input type="date" ng-model="newRecord.date" />
-        <button ng-click="addRecord()">Add</button>
-      </form>
+  <section ng-view>
+  </section>
 
-      <ng-include src="'/templates/listRecords.tmpl.html'">
-      </ng-include>
-    </main>
-
-  <script src="lib/angular.min.js"></script>
+  <script src="lib/libs.js"></script>
   <script src="js/myApp.js"></script>
+  <script src="js/startPageController.js"></script>
   <script src="js/storageServiceServer.js"></script>
 </body>
 </html>
