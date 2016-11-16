@@ -1,8 +1,10 @@
 var myApp = angular.module('myApp');
-myApp.service("storageService", storageServiceServer);
+console.log('Loaded storageServiceServer');
+myApp.service("storageServiceServer", storageServiceServer);
 
 
 function storageServiceServer($http) {
+  console.log('Created storageServiceServer');
   var storage = [];
 
   $http.get('/api/items').then(function(result) {

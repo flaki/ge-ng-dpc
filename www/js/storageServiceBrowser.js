@@ -1,8 +1,10 @@
 var myApp = angular.module('myApp');
-myApp.service("storageService", storageServiceBrowser);
+console.log('Loaded storageServiceBrowser');
+myApp.service("storageServiceBrowser", storageServiceBrowser);
 
 
 function storageServiceBrowser() {
+  console.log('Created storageServiceBrowser');
   var storage = JSON.parse(localStorage.getItem('storageServiceBrowser')||'[]');
 
   function addRecord(newRecord) {

@@ -1,8 +1,10 @@
 var myApp = angular.module('myApp');
-myApp.service("storageService", storageServiceMemory);
+console.log('Loaded storageServiceMemory');
+myApp.service("storageServiceMemory", storageServiceMemory);
 
 
 function storageServiceMemory() {
+  console.log('Created storageServiceMemory');
   var storage = [];
 
   function addRecord(newRecord) {

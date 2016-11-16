@@ -1,15 +1,19 @@
 var expect = chai.expect;
 
-describe("Testing", function() {
-  it("is running properly", function() {});
+describe('Testing', function() {
+  it('is running properly', function() {});
 });
 
-describe("myApp", function() {
+describe('myApp', function() {
   beforeEach(function() {
-    module("myApp");
+    angular.mock.module('config', function ($provide) {
+      $provide.constant('usedStorage', 'Browser');
+    });
+
+    angular.mock.module('myApp');
   });
 
-  it("has myController", inject( function($controller) {
+  it('has myController', inject( function($controller) {
     var c = $controller('myController', {
       $scope: {}
     });
@@ -17,7 +21,7 @@ describe("myApp", function() {
     expect(c).to.exist;
   }));
 
-  it("myController has an addRecord method", inject( function($controller) {
+  it('myController has an addRecord method', inject( function($controller) {
     var scope = {};
     var c = $controller('myController', {
       $scope: scope
@@ -27,7 +31,7 @@ describe("myApp", function() {
     expect(scope.addRecord).to.be.a('function');
   }));
 
-  it("myController's addRecord() works properly", inject( function($controller) {
+  it('myController\'s addRecord() works properly', inject( function($controller) {
     var newRecord = {};
 
     var scope = {};
