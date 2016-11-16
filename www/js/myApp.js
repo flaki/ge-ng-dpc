@@ -21,3 +21,11 @@ myApp.config(function($routeProvider, $locationProvider) {
     rewriteLinks: true
   });
 });
+
+
+myApp.filter('hungarianCurrency', function($filter) {
+  return function(value, precision) {
+    //return value+' Ft';
+    return $filter('currency')(value,'',precision)+' Ft';
+  }
+});

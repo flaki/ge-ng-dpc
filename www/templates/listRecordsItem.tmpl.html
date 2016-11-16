@@ -1,10 +1,10 @@
 <span class="desc">
-  [{{r.date}}]
+  [{{r.date|date:'short'}}]
   {{r.description}}
 </span>
 
 <span class="amount">
-  {{r.amount|currency:"HUF ":0}}
+  {{r.amount|hungarianCurrency:0}}
 </span>
 
 <a href="/details/{{r._id}}">more...</a>
