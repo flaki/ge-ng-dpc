@@ -6,10 +6,11 @@
   "scripts": {
     "copy-libs": "mkdir www/lib && cp node_modules/angular/angular.min.js www/lib/",
     "gulp-copy-libs": "node_modules/.bin/gulp copy-libs",
+    "gulp-concat-libs": "node_modules/.bin/gulp concat-libs",
     "serve": "node_modules/.bin/http-server -p 8080 www",
     "apiserver": "node node_modules/dpc-angular-server/server.js ./www",
     "test": "karma start",
-    "postinstall": "npm run gulp-copy-libs"
+    "postinstall": "npm run gulp-copy-libs && npm run gulp-concat-libs"
   },
   "author": "Flaki",
   "license": "ISC",
@@ -20,7 +21,7 @@
   "devDependencies": {
     "angular-mocks": "^1.5.8",
     "chai": "^3.5.0",
-    "dpc-angular-server": "flaki/dpc-angular-server",
+    "dpc-angular-server": "^1.0.0",
     "gulp": "^3.9.1",
     "gulp-cli": "^1.2.2",
     "gulp-concat": "^2.6.1",
