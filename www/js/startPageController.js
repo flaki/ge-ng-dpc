@@ -1,8 +1,8 @@
 angular.module('myApp')
   .controller("startPageController", startPageController);
 
-function startPageController($scope, storageService) {
-  console.log('startPageController');
+function startPageController($scope, storageService, $route) {
+  console.log('startPageController', $route);
   $scope.newRecord = {};
 
   $scope.addRecord = addRecord;

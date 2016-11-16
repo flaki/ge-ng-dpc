@@ -2,12 +2,16 @@ var myApp = angular.module('myApp', ['ngRoute']);
 
 myApp.config(function($routeProvider, $locationProvider) {
   $routeProvider
+    .when('/details/:id', {
+      templateUrl: '/templates/detailsPage.tmpl.html',
+      controller: 'detailsPageController'
+    })
     .when('/all', {
-      templateUrl: 'templates/allPage.tmpl.html',
+      templateUrl: '/templates/allPage.tmpl.html',
       controller: 'allPageController'
     })
     .otherwise({
-      templateUrl: 'templates/startPage.tmpl.html',
+      templateUrl: '/templates/startPage.tmpl.html',
       controller: 'startPageController'
     });
 
