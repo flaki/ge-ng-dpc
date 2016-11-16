@@ -18,14 +18,8 @@
         <button ng-click="addRecord()">Add</button>
       </form>
 
-      <section class="listRecords">
-        <ul>
-          <li ng-repeat="r in listRecords()">
-            <span class="desc">[{{r.date}}] {{r.description}}</span>
-            <span class="amount">{{r.amount|currency:"HUF ":0}}
-          </li>
-        </ul>
-      </section>
+      <ng-include src="'/templates/listRecords.tmpl.html'">
+      </ng-include>
     </main>
 
   <script src="lib/angular.min.js"></script>
